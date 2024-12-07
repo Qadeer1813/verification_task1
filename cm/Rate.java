@@ -25,7 +25,7 @@ public class Rate {
             throw new IllegalArgumentException("A rate cannot be negative");
         }
         if (normalRate.compareTo(reducedRate) < 0) {
-            throw new IllegalArgumentException("The normal rate must be greater than or equal to the reduced rate");
+            throw new IllegalArgumentException("The normal rate cant be less than the reduced rate");
         }
         if (normalRate.compareTo(BigDecimal.TEN) > 0 || reducedRate.compareTo(BigDecimal.TEN) > 0) {
             throw new IllegalArgumentException("Rates must not exceed 10");
