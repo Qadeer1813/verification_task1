@@ -13,7 +13,7 @@ public class Rate {
 
     public Rate(CarParkKind kind, ArrayList<Period> reducedPeriods, ArrayList<Period> normalPeriods, BigDecimal normalRate, BigDecimal reducedRate) {
         if (kind == null){
-            throw new NullPointerException("The Car Park Kind cannot be null");
+            throw new IllegalArgumentException("The Car Park Kind cannot be null");
         }
         if (reducedPeriods == null || normalPeriods == null) {
             throw new IllegalArgumentException("periods cannot be null");
@@ -95,7 +95,7 @@ public class Rate {
     }
     public BigDecimal calculate(Period periodStay) {
         if (periodStay == null) {
-            throw new IllegalArgumentException("periodStay cannot be null");
+            throw new IllegalArgumentException("Period Stay cannot be null");
         }
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
